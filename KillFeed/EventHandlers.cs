@@ -36,9 +36,9 @@ namespace KillFeed
 					string damagetype = VerifyDamageType(ev.HitInformations.GetDamageType());
 					string msg = KillFeed.instance.Config.KillMessage
 						.Replace("%killername", $"<color=#{GetColor(ev.Killer.Role)}>{ev.Killer.Nickname}</color>")
-						.Replace("%killerid", $"{ev.Killer.Id}")
+						.Replace("%killerid", ev.Killer.Id.ToString())
 						.Replace("%victimname", $"<color=#{GetColor(ev.Target.Role)}>{ev.Target.Nickname}</color>")
-						.Replace("%victimid", $"{ev.Target.Id}")
+						.Replace("%victimid", ev.Target.Id.ToString())
 						.Replace("%weapon", damagetype != string.Empty ? damagetype : ev.HitInformations.GetDamageName());
 					player.SendConsoleMessage(msg, KillFeed.instance.Config.KillColor);
 				}
