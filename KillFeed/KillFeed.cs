@@ -16,6 +16,7 @@ namespace KillFeed
 
             Exiled.Events.Handlers.Server.SendingConsoleCommand += ev.OnConsoleCommand;
             Exiled.Events.Handlers.Player.Died += ev.OnPlayerDeath;
+            Exiled.Events.Handlers.Server.RestartingRound += ev.OnRoundRestart;
         }
 
         public override void OnDisabled()
@@ -24,6 +25,7 @@ namespace KillFeed
 
             Exiled.Events.Handlers.Server.SendingConsoleCommand -= ev.OnConsoleCommand;
             Exiled.Events.Handlers.Player.Died -= ev.OnPlayerDeath;
+            Exiled.Events.Handlers.Server.RestartingRound -= ev.OnRoundRestart;
 
             ev = null;
         }
