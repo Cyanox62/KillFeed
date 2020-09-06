@@ -13,6 +13,7 @@ namespace KillFeed
 			string cmd = ev.Name.ToLower();
 			if ((cmd == "killfeed" || cmd == "kf") && ev.Player.ReferenceHub.serverRoles.RemoteAdmin)
 			{
+				ev.IsAllowed = false;
 				ev.Color = "white";
 				if (killFeedPlayers.Contains(ev.Player))
 				{
