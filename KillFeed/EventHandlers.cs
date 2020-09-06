@@ -44,5 +44,7 @@ namespace KillFeed
 				}
 			}
 		}
+
+		internal void OnRoundRestart() => killFeedPlayers.Clear();
 	}
 }
